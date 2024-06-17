@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="checkInForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="366.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.src.hotelmanagement.CheckInController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="116.0" layoutY="128.0" prefHeight="552.0" prefWidth="366.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="31.0" prefWidth="366.0" stylesheets="@das.css" BorderPane.alignment="CENTER">
+                     <styleClass>
+                        <String fx:value="task" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <Button fx:id="close" layoutX="335.0" layoutY="3.0" mnemonicParsing="false" onAction="#close" prefHeight="24.0" prefWidth="21.0" stylesheets="@das.css">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="CLOSE" />
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="logout" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                        </Button>
+                        <Label layoutX="27.0" layoutY="9.0" text="Hotel Management | Check-In">
+                           <font>
+                              <Font name="Tahoma" size="12.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIcon glyphName="KEY" layoutX="8.0" layoutY="20.0" />
+                     </children>
+                  </AnchorPane>
+               </top>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="83.0" layoutY="145.0" prefHeight="514.0" prefWidth="366.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="70.0" layoutY="49.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@das.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <styleClass>
+                                    <String fx:value="white-form" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Check In">
+                                       <font>
+                                          <Font name="Berlin Sans FB" size="25.0" />
+                                       </font>
+                                       <graphic>
+                                          <FontAwesomeIcon fill="#b5bf00" glyphName="KEY" size="1.2em" text="" />
+                                       </graphic>
+                                    </Label>
+                                    <Label layoutX="28.0" layoutY="73.0" text="Room #: ">
+                                       <font>
+                                          <Font name="Microsoft Sans Serif" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="roomLabel" layoutX="90.0" layoutY="72.0" text="101" underline="true">
+                                       <font>
+                                          <Font name="Microsoft Sans Serif" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="140.0" layoutY="73.0" text="Room Type: ">
+                                       <font>
+                                          <Font name="Microsoft Sans Serif" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="140.0" layoutY="121.0" text="Status:">
+                                       <font>
+                                          <Font name="Microsoft Sans Serif" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="28.0" layoutY="121.0" text="Price:">
+                                       <font>
+                                          <Font name="Microsoft Sans Serif" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <AnchorPane layoutX="73.0" layoutY="234.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="160.0">
+                                       <styleClass>
+                                          <String fx:value="white-form" />
+                                          <String fx:value="shadow" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <children>
+                                          <Label layoutX="13.0" layoutY="29.0" text="First Name">
+                                             <font>
+                                                <Font name="Microsoft Sans Serif" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="lastName" layoutX="176.0" layoutY="45.0" styleClass="text-field-checkin" />
+                                          <Label layoutX="176.0" layoutY="29.0" text="Last Name">
+                                             <font>
+                                                <Font name="Microsoft Sans Serif" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="firstName" layoutX="13.0" layoutY="45.0" styleClass="text-field-checkin" />
+                                          <Label layoutX="13.0" layoutY="97.0" text="Phone Number">
+                                             <font>
+                                                <Font name="Microsoft Sans Serif" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="email" layoutX="176.0" layoutY="113.0" styleClass="text-field-checkin" />
+                                          <Label layoutX="176.0" layoutY="161.0" text="Check-Out Day">
+                                             <font>
+                                                <Font name="Microsoft Sans Serif" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="phone" layoutX="13.0" layoutY="113.0" styleClass="text-field-checkin" />
+                                          <Label layoutX="13.0" layoutY="160.0" text="Check-In Date">
+                                             <font>
+                                                <Font name="Microsoft Sans Serif" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="176.0" layoutY="97.0" text="Email">
+                                             <font>
+                                                <Font name="Microsoft Sans Serif" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <DatePicker fx:id="checkOutDate" layoutX="176.0" layoutY="188.0" onAction="#totalDaysAndTotalMoney" prefHeight="26.0" prefWidth="145.0" promptText="MM-DD-YYYY" />
+                                          <DatePicker fx:id="checkInDate" layoutX="13.0" layoutY="188.0" onAction="#totalDaysAndTotalMoney" prefHeight="26.0" prefWidth="146.0" promptText="MM-DD-YYYY" />
+                                          <Label layoutX="130.0" layoutY="274.0" text="Total:">
+                                             <font>
+                                                <Font name="Tahoma" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="total" layoutX="171.0" layoutY="269.0" prefHeight="30.0" prefWidth="142.0" text="\$0.0">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="25.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="92.0" layoutY="239.0" text="Total Days:">
+                                             <font>
+                                                <Font name="Tahoma" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="totalDays" layoutX="174.0" layoutY="239.0" text="---">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <Button fx:id="resetBtn" layoutX="185.0" layoutY="413.0" mnemonicParsing="false" onAction="#informationClear" prefHeight="35.0" prefWidth="65.0" styleClass="reset-btn" text="Reset" AnchorPane.bottomAnchor="6.0">
+                                       <font>
+                                          <Font name="Microsoft Sans Serif" size="12.0" />
+                                       </font></Button>
+                                    <Button fx:id="checkInBtn" layoutX="270.0" layoutY="413.0" mnemonicParsing="false" onAction="#customerCheckIn" prefHeight="35.0" prefWidth="65.0" styleClass="checkin-btn" text="Check-In" AnchorPane.bottomAnchor="6.0" />
+                                    <Button fx:id="receiptBtn" layoutX="3.0" layoutY="413.0" mnemonicParsing="false" onAction="#receipt" prefHeight="35.0" prefWidth="50.0" AnchorPane.bottomAnchor="6.0">
+                                       <graphic>
+                                          <FontAwesomeIcon glyphName="PRINT" size="1.6em" />
+                                       </graphic>
+                                       <styleClass>
+                                          <String fx:value="room-btn" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                    </Button>
+                                    <Label fx:id="typeLabel" layoutX="230.0" layoutY="73.0" text="Single Room" underline="true">
+                                       <font>
+                                          <Font name="Microsoft Sans Serif" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="statusLabel" layoutX="200.0" layoutY="120.0" text="Available" underline="true">
+                                       <font>
+                                          <Font name="Microsoft Sans Serif" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="priceLabel" layoutX="72.0" layoutY="120.0" text="50 $" underline="true">
+                                       <font>
+                                          <Font name="Microsoft Sans Serif" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

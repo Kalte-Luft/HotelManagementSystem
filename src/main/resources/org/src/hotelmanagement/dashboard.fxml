@@ -1,0 +1,1136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainForm" prefHeight="661.0" prefWidth="1008.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.src.hotelmanagement.DashBoardController">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="34.0" prefWidth="1000.0" stylesheets="@das.css">
+               <children>
+                  <AnchorPane layoutX="875.2" prefHeight="34.0" prefWidth="125.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button layoutX="92.0" layoutY="4.0" mnemonicParsing="false" onAction="#exit" prefWidth="25.6" stylesheets="@das.css">
+                           <styleClass>
+                              <String fx:value="exit" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </Button>
+                        <Button layoutX="22.0" layoutY="4.0" mnemonicParsing="false" onAction="#minimize" prefWidth="25.6" stylesheets="@das.css">
+                           <styleClass>
+                              <String fx:value="minimize-btn" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </Button>
+                        <Button layoutX="57.0" layoutY="4.0" mnemonicParsing="false" onAction="#maximize" prefWidth="25.6" stylesheets="@das.css">
+                           <styleClass>
+                              <String fx:value="maximize-btn" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <FontAwesomeIcon fill="#2d6980" glyphName="BUILDING" layoutX="14.0" layoutY="25.0" size="1.8em" />
+                  <Label layoutX="41.0" layoutY="9.0" text="Hotel Management System">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               <styleClass>
+                  <String fx:value="task" />
+                  <String fx:value="shadow" />
+               </styleClass>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" />
+               </BorderPane.margin>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane fx:id="content" prefHeight="200.0" prefWidth="200.0" stylesheets="@das.css" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="dashboardForm" layoutX="88.0" layoutY="166.0" prefHeight="555.2" prefWidth="789.6" stylesheets="@das.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="160.0" prefWidth="766.0" stylesheets="@das.css" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
+                           <children>
+                              <ScrollPane prefHeight="160.0" prefWidth="766.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <content>
+                                    <AnchorPane prefHeight="120.0" prefWidth="950.0">
+                                       <children>
+                                          <AnchorPane layoutX="18.0" layoutY="14.0" prefHeight="126.0" prefWidth="240.0" styleClass="nav" stylesheets="@das.css">
+                                             <children>
+                                                <FontAwesomeIcon fill="WHITE" glyphName="USERS" layoutX="20.0" layoutY="50.0" size="3.6em" />
+                                                <Label layoutX="88.0" layoutY="24.0" text="Customers" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="customerNumCard" layoutX="35.0" layoutY="74.0" prefHeight="30.0" prefWidth="170.0" styleClass="nameLB" text="3853" textAlignment="CENTER" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Lucida Sans Demibold Roman" size="25.0" />
+                                                   </font>
+                                                </Label>
+                                             </children></AnchorPane>
+                                          <AnchorPane layoutX="319.0" layoutY="14.0" prefHeight="126.0" prefWidth="240.0" styleClass="nav" stylesheets="@das.css">
+                                             <children>
+                                                <FontAwesomeIcon fill="WHITE" glyphName="MONEY" layoutX="17.0" layoutY="49.0" size="3.6em" />
+                                                <Label fx:id="todayIncomeCard" layoutX="35.0" layoutY="74.0" prefHeight="30.0" prefWidth="170.0" styleClass="nameLB" text="3853" textAlignment="CENTER" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Lucida Sans Demibold Roman" size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="86.0" layoutY="24.0" text="Today's Income" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children></AnchorPane>
+                                          <AnchorPane layoutX="625.0" layoutY="14.0" prefHeight="126.0" prefWidth="240.0" styleClass="nav" stylesheets="@das.css">
+                                             <children>
+                                                <FontAwesomeIcon fill="WHITE" glyphName="DOLLAR" layoutX="14.0" layoutY="49.0" size="3.6em" />
+                                                <Label layoutX="79.0" layoutY="25.0" text="Total Income" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="totalIncomeCard" layoutX="35.0" layoutY="74.0" prefHeight="30.0" prefWidth="170.0" styleClass="nameLB" text="3853" textAlignment="CENTER" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Lucida Sans Demibold Roman" size="25.0" />
+                                                   </font>
+                                                </Label>
+                                             </children></AnchorPane>
+                                          <AnchorPane layoutX="930.0" layoutY="14.0" prefHeight="126.0" prefWidth="240.0" styleClass="nav" stylesheets="@das.css">
+                                             <children>
+                                                <FontAwesomeIcon fill="WHITE" glyphName="MONEY" layoutX="14.0" layoutY="49.0" size="3.6em" />
+                                                <Label layoutX="79.0" layoutY="25.0" text="Month's Income" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="incomePerMonthCard" layoutX="35.0" layoutY="74.0" prefHeight="30.0" prefWidth="170.0" styleClass="nameLB" text="3853" textAlignment="CENTER" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Lucida Sans Demibold Roman" size="25.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                           <styleClass>
+                              <String fx:value="white-form" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane layoutX="13.0" layoutY="184.0" prefHeight="359.0" prefWidth="766.0" stylesheets="@das.css" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="184.0">
+                           <styleClass>
+                              <String fx:value="white-form" />
+                              <String fx:value="radius" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="179.0" prefWidth="570.0" stylesheets="@das.css" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                 <styleClass>
+                                    <String fx:value="white-form" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <AreaChart fx:id="dashboard_NC_chart" layoutX="-70.0" layoutY="-110.0" prefHeight="290.4" prefWidth="423.0" title="Number Of Customers" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <xAxis>
+                                          <CategoryAxis side="BOTTOM" />
+                                       </xAxis>
+                                       <yAxis>
+                                          <NumberAxis side="LEFT" />
+                                       </yAxis>
+                                    </AreaChart>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="432.0" layoutY="14.0" prefHeight="392.0" prefWidth="370.0" stylesheets="@das.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="600.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                 <styleClass>
+                                    <String fx:value="white-form" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <BarChart fx:id="dashboard_IPM_chart" layoutX="-182.0" layoutY="-100.0" prefHeight="330" prefWidth="318.4" title="Income Per Month" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <xAxis>
+                                          <CategoryAxis side="BOTTOM" />
+                                       </xAxis>
+                                       <yAxis>
+                                          <NumberAxis side="LEFT" />
+                                       </yAxis>
+                                    </BarChart>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="14.0" layoutY="210.0" prefHeight="196.0" prefWidth="573.0" stylesheets="@das.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="210.0">
+                                 <styleClass>
+                                    <String fx:value="white-form" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                                 <children>
+                                    <LineChart fx:id="dashboard_IPD_chart" layoutX="-77.0" layoutY="-170.0" prefHeight="230" prefWidth="423" title="Income Per Day" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <xAxis>
+                                          <CategoryAxis side="BOTTOM" />
+                                       </xAxis>
+                                       <yAxis>
+                                          <NumberAxis side="LEFT" />
+                                       </yAxis>
+                                    </LineChart>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <ScrollPane fx:id="orderForm" layoutX="-5.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <AnchorPane prefHeight="900.0" prefWidth="1530.0">
+                           <children>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="616.0" prefWidth="1000.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <GridPane fx:id="grid1" layoutY="89.0" prefHeight="106.0" prefWidth="1062.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <styleClass>
+                                          <String fx:value="white-form" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <Button fx:id="r101" contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 101" textAlignment="CENTER">
+                                             <graphic>
+                                                <ImageView fx:id="i101" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/singleroom-empty.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="r102" contentDisplay="TOP" layoutX="12.0" layoutY="28.0" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 102" GridPane.columnIndex="1">
+                                             <graphic>
+                                                <ImageView fx:id="i102" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/singleroom-empty.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="r103" contentDisplay="TOP" layoutX="96.0" layoutY="28.0" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 103" GridPane.columnIndex="2">
+                                             <graphic>
+                                                <ImageView fx:id="i103" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/doubleroom-empty.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" layoutX="180.0" layoutY="16.0" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 104" GridPane.columnIndex="3">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/singleroom-empty.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" layoutX="264.0" layoutY="16.0" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 105" GridPane.columnIndex="4">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/tripleroom-empty.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" layoutX="348.0" layoutY="16.0" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 106" GridPane.columnIndex="5">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/doubleroom-empty.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" layoutX="348.0" layoutY="16.0" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 107" GridPane.columnIndex="6">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/viproom-empty.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </GridPane>
+                                    <GridPane fx:id="grid2" layoutY="222.0" prefHeight="106.0" prefWidth="1062.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <styleClass>
+                                          <String fx:value="white-form" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 201" textAlignment="CENTER">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/singleroom-empty.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 202" textAlignment="CENTER" GridPane.columnIndex="1">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/doubleroom.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 203" textAlignment="CENTER" GridPane.columnIndex="2">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/singleroom.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 204" textAlignment="CENTER" GridPane.columnIndex="3">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/tripleroom-empty.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 205" textAlignment="CENTER" GridPane.columnIndex="4">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/viproom.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 206" textAlignment="CENTER" GridPane.columnIndex="5">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/viproom-empty.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </GridPane>
+                                    <GridPane fx:id="grid3" layoutY="357.0" prefHeight="106.0" prefWidth="1062.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <styleClass>
+                                          <String fx:value="white-form" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 301" textAlignment="CENTER">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/viproom-empty.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 302" textAlignment="CENTER" GridPane.columnIndex="1">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/doubleroom-empty.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 305" textAlignment="CENTER" GridPane.columnIndex="4">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/singleroom-empty.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 304" textAlignment="CENTER" GridPane.columnIndex="3">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/tripleroom.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 303" textAlignment="CENTER" GridPane.columnIndex="2">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/singleroom.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </GridPane>
+                                    <GridPane fx:id="grid4" layoutY="492.0" prefHeight="106.0" prefWidth="1062.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <styleClass>
+                                          <String fx:value="white-form" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 401" textAlignment="CENTER">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/singleroom.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 405" textAlignment="CENTER" GridPane.columnIndex="4">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/viproom.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 404" textAlignment="CENTER" GridPane.columnIndex="3">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/singleroom-empty.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 403" textAlignment="CENTER" GridPane.columnIndex="2">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/tripleroom-empty.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#onRoomButtonClicked" styleClass="room-btn" text="Room 402" textAlignment="CENTER" GridPane.columnIndex="1">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Images/doubleroom-empty.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </GridPane>
+                                    <Label layoutX="3.0" layoutY="63.0" text="1st Floor" textFill="#766868">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="3.0" layoutY="199.0" text="2nd Floor" textFill="#766868">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="3.0" layoutY="333.0" text="3rd Floor" textFill="#766868">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="3.0" layoutY="469.0" text="4th Floor" textFill="#766868">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <AnchorPane layoutX="27.0" layoutY="28.0" prefHeight="62.0" prefWidth="1530.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Button fx:id="btnExtend" layoutX="24.0" layoutY="14.0" mnemonicParsing="false" onAction="#extendTable" prefHeight="35.0" prefWidth="80.0" styleClass="function-btn" text="Detail">
+                                             <graphic>
+                                                <FontAwesomeIcon glyphName="TABLE" size="1.6em" text="">
+                                                   <fill>
+                                                      <LinearGradient endX="1.0" endY="1.0">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.2549019753932953" green="0.6901960968971252" blue="0.6901960968971252" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                </FontAwesomeIcon>
+                                             </graphic>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="resetRoom" layoutX="118.0" layoutY="14.0" mnemonicParsing="false" onAction="#resetRoomView" prefHeight="35.0" prefWidth="80.0" styleClass="function-btn" text="Reset">
+                                             <graphic>
+                                                <FontAwesomeIcon glyphName="REPEAT" size="1.6em">
+                                                   <fill>
+                                                      <LinearGradient endX="1.0" endY="1.0">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.2549019753932953" green="0.6901960968971252" blue="0.6901960968971252" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                </FontAwesomeIcon>
+                                             </graphic>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="searchTextField" layoutX="214.0" layoutY="14.0" prefHeight="35.0" prefWidth="273.0" styleClass="text-field-search" />
+                                          <Button fx:id="searchBtn" layoutX="446.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchRoom" prefHeight="35.0" prefWidth="35.0" styleClass="room-btn">
+                                             <graphic>
+                                                <FontAwesomeIcon glyphName="PAPER_PLANE" size="1.5em">
+                                                   <fill>
+                                                      <LinearGradient endX="1.0" endY="1.0">
+                                                         <stops>
+                                                            <Stop>
+                                                               <color>
+                                                                  <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                                               </color>
+                                                            </Stop>
+                                                            <Stop offset="1.0">
+                                                               <color>
+                                                                  <Color red="0.2549019753932953" green="0.6901960968971252" blue="0.6901960968971252" />
+                                                               </color>
+                                                            </Stop>
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </fill>
+                                                </FontAwesomeIcon>
+                                             </graphic>
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <FontAwesomeIcon glyphName="SEARCH" layoutX="224.0" layoutY="39.0" size="1.8em" text="">
+                                             <fill>
+                                                <LinearGradient endX="1.0" endY="1.0">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="0.2549019753932953" green="0.6901960968971252" blue="0.6901960968971252" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </LinearGradient>
+                                             </fill>
+                                          </FontAwesomeIcon>
+                                          <ComboBox fx:id="typeSearch" layoutX="505.0" layoutY="14.0" onAction="#searchRoomByTypeAndStatus" prefHeight="35.0" prefWidth="137.0" styleClass="function-btn" />
+                                          <ComboBox fx:id="statusSearch" layoutX="659.0" layoutY="14.0" onAction="#searchRoomByTypeAndStatus" prefHeight="35.0" prefWidth="172.0" styleClass="function-btn" />
+                                          <Label layoutX="518.0" layoutY="5.0" styleClass="white-form" text=" Type ">
+                                             <textFill>
+                                                <LinearGradient endX="1.0" endY="1.0">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="0.2549019753932953" green="0.6901960968971252" blue="0.6901960968971252" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </LinearGradient>
+                                             </textFill>
+                                          </Label>
+                                          <Label layoutX="674.0" layoutY="5.0" styleClass="white-form" text=" Status ">
+                                             <textFill>
+                                                <LinearGradient endX="1.0" endY="1.0">
+                                                   <stops>
+                                                      <Stop>
+                                                         <color>
+                                                            <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                                         </color>
+                                                      </Stop>
+                                                      <Stop offset="1.0">
+                                                         <color>
+                                                            <Color red="0.2549019753932953" green="0.6901960968971252" blue="0.6901960968971252" />
+                                                         </color>
+                                                      </Stop>
+                                                   </stops>
+                                                </LinearGradient>
+                                             </textFill>
+                                          </Label>
+                                       </children>
+                                       <styleClass>
+                                          <String fx:value="white-form" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+                  <AnchorPane fx:id="customerForm" prefHeight="616.8" prefWidth="1008.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="20.0" layoutY="20.0" prefHeight="574.0" prefWidth="278.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <styleClass>
+                              <String fx:value="white-form" />
+                              <String fx:value="radius" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <TextField fx:id="firstNameTF" layoutX="92.0" layoutY="15.0" prefHeight="30.0" prefWidth="165.0" styleClass="text-field-input" stylesheets="@das.css" />
+                              <TextField fx:id="lastNameTF" layoutX="92.0" layoutY="74.0" prefHeight="30.0" prefWidth="165.0" styleClass="text-field-input" stylesheets="@das.css" />
+                              <TextField fx:id="phoneTF" layoutX="90.0" layoutY="137.0" prefHeight="30.0" prefWidth="165.0" styleClass="text-field-input" stylesheets="@das.css" />
+                              <TextField fx:id="emailTF" layoutX="90.0" layoutY="199.0" prefHeight="30.0" prefWidth="165.0" styleClass="text-field-input" stylesheets="@das.css" />
+                              <DatePicker fx:id="checkInDate" layoutX="90.0" layoutY="260.0" prefHeight="30.0" prefWidth="165.0" styleClass="text-field-input" stylesheets="@das.css" />
+                              <DatePicker fx:id="checkOutDate" layoutX="90.0" layoutY="321.0" prefHeight="30.0" prefWidth="165.0" styleClass="text-field-input" stylesheets="@das.css" />
+                              <Label layoutX="11.0" layoutY="19.0" text="First Name:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.2549019753932953" green="0.6901960968971252" blue="0.6901960968971252" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                              <Label layoutX="11.0" layoutY="78.0" text="Last Name:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.2549019753932953" green="0.6901960968971252" blue="0.6901960968971252" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                              <Label layoutX="11.0" layoutY="141.0" text="Phone:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.2549019753932953" green="0.6901960968971252" blue="0.6901960968971252" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                              <Label layoutX="11.0" layoutY="203.0" text="Email:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.2549019753932953" green="0.6901960968971252" blue="0.6901960968971252" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                              <Label layoutX="11.0" layoutY="264.0" text="Check In:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.2549019753932953" green="0.6901960968971252" blue="0.6901960968971252" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                              <Label layoutX="11.0" layoutY="325.0" text="Check Out:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.2549019753932953" green="0.6901960968971252" blue="0.6901960968971252" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                              <Button fx:id="addBtn" layoutX="51.0" layoutY="464.0" mnemonicParsing="false" onAction="#addCustomer" prefHeight="40.0" prefWidth="70.0" styleClass="add-btn" text="Add">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="updateBtn" layoutX="164.0" layoutY="464.0" mnemonicParsing="false" onAction="#updateCustomer" prefHeight="40.0" prefWidth="70.0" styleClass="update-btn" text="Update">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="clearBtn" layoutX="51.0" layoutY="522.0" mnemonicParsing="false" onAction="#clearCustomer" prefHeight="40.0" prefWidth="70.0" styleClass="clear-btn" text="Clear">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="deleteBtn" layoutX="164.0" layoutY="522.0" mnemonicParsing="false" onAction="#deleteCustomer" prefHeight="40.0" prefWidth="70.0" styleClass="delete-btn" text="Delete">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="roomTF" layoutX="91.0" layoutY="381.0" prefHeight="30.0" prefWidth="165.0" styleClass="text-field-input" stylesheets="@das.css" />
+                              <Label layoutX="10.0" layoutY="385.0" text="Room:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="0.006729475100942127">
+                                             <color>
+                                                <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.2549019753932953" green="0.6901960968971252" blue="0.6901960968971252" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="335.0" layoutY="45.0" prefHeight="545.0" prefWidth="542.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <styleClass>
+                              <String fx:value="white-form" />
+                              <String fx:value="shadow" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                           <children>
+                              <TableView fx:id="customerTb" layoutX="20.0" layoutY="51.2" onMouseClicked="#selectCustomer" prefHeight="526.0" prefWidth="665.0" styleClass="table-transparent" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0">
+                                <columns>
+                                  <TableColumn fx:id="colCusNum" prefWidth="73.33331298828125" text="Num" />
+                                  <TableColumn fx:id="colFirstName" prefWidth="81.86669921875" text="First Name" />
+                                    <TableColumn fx:id="colLastName" prefWidth="84.53338623046875" text="Last Name" />
+                                    <TableColumn fx:id="colPhone" prefWidth="105.06671142578125" text="Phone Number" />
+                                    <TableColumn fx:id="colEmail" prefWidth="93.59991455078125" text="Email" />
+                                    <TableColumn fx:id="colCheckIn" prefWidth="88.0001220703125" text="Check In" />
+                                    <TableColumn fx:id="colCheckOut" prefWidth="80.800048828125" text="Check Out" />
+                                    <TableColumn fx:id="colCusRoom" prefWidth="54.39998779296877" text="Room" />
+                                </columns>
+                              </TableView>
+                              <TextField fx:id="searchTF" layoutX="30.0" layoutY="10.0" onAction="#searchCustomer" prefHeight="30.0" prefWidth="296.0" styleClass="text-field-search" />
+                              <FontAwesomeIcon glyphName="SEARCH" layoutX="38.0" layoutY="32.0" size="1.8em">
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.2549019753932953" green="0.6901960968971252" blue="0.6901960968971252" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill></FontAwesomeIcon>
+                              <Button layoutX="339.0" layoutY="10.0" mnemonicParsing="false" onAction="#resetCustomerTable" prefHeight="30.0" prefWidth="29.0" styleClass="function-btn">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="REPEAT" size="1.6em">
+                                       <fill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop>
+                                                   <color>
+                                                      <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                                   </color>
+                                                </Stop>
+                                                <Stop offset="1.0">
+                                                   <color>
+                                                      <Color red="0.2549019753932953" green="0.6901960968971252" blue="0.6901960968971252" />
+                                                   </color>
+                                                </Stop>
+                                             </stops>
+                                          </LinearGradient>
+                                       </fill>
+                                    </FontAwesomeIcon>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="zoomin" mnemonicParsing="false" onAction="#collapseMenu" prefWidth="14.0" styleClass="room-btn" stylesheets="@das.css">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="CARET_RIGHT" size="1.8em" wrappingWidth="20.799987316131592">
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.1764705926179886" green="0.4117647111415863" blue="0.501960813999176" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.2549019753932953" green="0.6901960968971252" blue="0.6901960968971252" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill></FontAwesomeIcon>
+                     </graphic>
+                  </Button>
+                  <AnchorPane fx:id="tableRoomForm" layoutX="90.0" layoutY="52.0" prefHeight="433.0" prefWidth="840.0" visible="false" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="45.0">
+                     <children>
+                        <FontAwesomeIcon fill="#2d6980" glyphName="EJECT" layoutX="8.0" layoutY="22.0" size="1.5em" styleClass="shadow" text="" />
+                        <TableView fx:id="tableRoom" prefHeight="498.0" prefWidth="840.0" stylesheets="@das.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="16.0">
+                          <columns>
+                            <TableColumn fx:id="colRoom" prefWidth="195.1999969482422" text="Room" />
+                            <TableColumn fx:id="colRoomType" minWidth="0.0" prefWidth="209.60003662109375" text="Room Type" />
+                              <TableColumn fx:id="colStatus" minWidth="0.0" prefWidth="231.20001220703125" text="Status" />
+                              <TableColumn fx:id="colPrice" minWidth="0.0" prefWidth="204.79998779296875" text="Price $" />
+                          </columns>
+                           <styleClass>
+                              <String fx:value="shadow2" />
+                              <String fx:value="table-transparent" />
+                           </styleClass>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="accountForm" layoutX="208.0" prefHeight="206.0" prefWidth="210.0" styleClass="white-form" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="235.0" layoutY="52.0" text="Rename:">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Label>
+                        <TextField fx:id="renameTF" layoutX="296.0" layoutY="47.0" prefHeight="26.0" prefWidth="228.0" styleClass="account-textfield" />
+                        <Button layoutX="364.0" layoutY="90.0" mnemonicParsing="false" onAction="#changeName" prefHeight="30.0" prefWidth="92.0" stylesheets="@main.css" text="Save Change" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                        <Line endX="617.0" layoutX="100.0" layoutY="139.0" />
+                        <Label layoutX="202.0" layoutY="163.0" text="Old Password:">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="198.0" layoutY="211.0" text="New Password:">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Label>
+                        <Label layoutX="179.0" layoutY="259.0" text="Confirm Password:">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font></Label>
+                        <Button layoutX="364.0" layoutY="308.0" mnemonicParsing="false" onAction="#changePassword" prefHeight="31.0" prefWidth="91.0" stylesheets="@main.css" text="Save Change" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                        <PasswordField fx:id="oldPasswordTF" layoutX="331.0" layoutY="159.0" styleClass="account-textfield" />
+                        <PasswordField fx:id="newPasswordTF" layoutX="331.0" layoutY="207.0" styleClass="account-textfield" />
+                        <PasswordField fx:id="confirmPasswordTF" layoutX="331.0" layoutY="255.0" styleClass="account-textfield" />
+                     </children>
+                  </AnchorPane>
+               </children>
+               <styleClass>
+                  <String fx:value="gray_form" />
+                  <String fx:value="shadow" />
+               </styleClass>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+      <SplitPane fx:id="menu" prefHeight="661.0" prefWidth="188.0" styleClass="shadow2" stylesheets="@das.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="45.0">
+         <items>
+            <AnchorPane fx:id="menuPane" maxWidth="210.0" prefHeight="572.0" prefWidth="242.0" styleClass="nav" stylesheets="@das.css">
+               <children>
+                  <AnchorPane prefHeight="218.0" prefWidth="210.0" styleClass="header" stylesheets="@das.css" AnchorPane.bottomAnchor="397.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label fx:id="nameLB" layoutX="15.0" layoutY="165.0" prefHeight="19.0" prefWidth="177.0" styleClass="nameLB" text="Nguyen Ba Nghia" textFill="WHITE">
+                           <font>
+                              <Font name="Comic Sans MS" size="13.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="avtImage" fitHeight="121.0" fitWidth="120.0" layoutX="45.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/avt1.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="34.0" layoutY="6.0" text="Logout" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnLogout" layoutX="-4.0" mnemonicParsing="false" onAction="#switchToLogin" styleClass="logout" stylesheets="@das.css">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="1.8em" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="zoomout" layoutX="181.0" mnemonicParsing="false" onAction="#collapseMenu" styleClass="logout" stylesheets="@das.css">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="ANGLE_DOUBLE_LEFT" size="1.8em" />
+                           </graphic>
+                        </Button>
+                        <Line endX="67.40000915527344" endY="1.52587890625E-5" layoutX="105.0" layoutY="199.0" startX="-68.59999084472656" startY="1.52587890625E-5" stroke="WHITE" />
+                        <Circle fill="#1f93ff00" layoutX="105.0" layoutY="100.0" radius="60.0" stroke="WHITE" strokeType="OUTSIDE" />
+                        <Button fx:id="avtChangeBtn" layoutX="44.0" layoutY="39.0" mnemonicParsing="false" onAction="#onBtnChangeAvt" prefHeight="122.0" prefWidth="122.0" styleClass="circle-btn" stylesheets="@das.css" />
+                     </children>
+                  </AnchorPane>
+                  <Button layoutX="5.0" layoutY="221.0" mnemonicParsing="false" onAction="#onBtnDashboard" prefHeight="40.0" prefWidth="200.0" styleClass="nav-button" stylesheets="@das.css" text="Dashboard">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="DASHBOARD" size="1.3em" styleClass="nav-button" />
+                     </graphic>
+                  </Button>
+                  <Button layoutX="5.0" layoutY="274.0" mnemonicParsing="false" onAction="#onBtnOrder" prefHeight="40.0" prefWidth="200.0" styleClass="nav-button" stylesheets="@das.css" text="Order">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SHOPPING_CART" size="1.3em" styleClass="nav-button" />
+                     </graphic>
+                  </Button>
+                  <Button layoutX="5.0" layoutY="327.0" mnemonicParsing="false" onAction="#onBtnCustomer" prefHeight="40.0" prefWidth="200.0" styleClass="nav-button" stylesheets="@das.css" text="Customers">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="USERS" size="1.3em" styleClass="nav-button" />
+                     </graphic>
+                  </Button>
+                  <Button layoutX="50.0" layoutY="549.0" mnemonicParsing="false" onAction="#onBtnAccount" styleClass="logout" text="Your Account" textFill="WHITE" underline="true">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="USER" size="1.9em" />
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

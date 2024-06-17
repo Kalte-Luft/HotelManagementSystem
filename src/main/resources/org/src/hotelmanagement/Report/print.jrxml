@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="print" pageWidth="257" pageHeight="427" columnWidth="217" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c58ba100-6ded-425f-96ef-be450bf36d43">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="HotelManagement"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="hotelParameter" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT cr.id AS customer_receipt_id,
+	cr.customer_num AS customer_receipt_customer_num,
+	cr.total AS customer_receipt_total,
+	cr.date AS customer_receipt_date,
+	c.id AS customer_id,
+	c.customer_id AS customer_num,
+	c.`roomType` AS customer_room_type,
+	c.`checkOut` AS customer_check_out,
+	c.`checkIn` AS customer_check_in,
+	c.email AS customer_email,
+	c.`phoneNumber` AS customer_phone_number,
+	c.`lastName` AS customer_last_name,
+	c.`firstName` AS customer_first_name,
+	c.`roomNumber` AS customer_room_number
+FROM hoteldata.customer_receipt cr
+	INNER JOIN hoteldata.customer c ON 
+	 cr.customer_num = c.customer_id
+	 WHERE 
+    c.customer_id = $P{hotelParameter}]]>
+	</queryString>
+	<field name="customer_receipt_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_receipt_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer_receipt"/>
+	</field>
+	<field name="customer_receipt_customer_num" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="customer_num"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_receipt_customer_num"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer_receipt"/>
+	</field>
+	<field name="customer_receipt_total" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="total"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_receipt_total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer_receipt"/>
+	</field>
+	<field name="customer_receipt_date" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="date"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_receipt_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer_receipt"/>
+	</field>
+	<field name="customer_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="customer_num" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="customer_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_num"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="customer_room_type" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="roomType"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_room_type"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="customer_check_out" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="checkOut"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_check_out"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="customer_check_in" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="checkIn"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_check_in"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="customer_email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="email"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="customer_phone_number" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="phoneNumber"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_phone_number"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="customer_last_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="lastName"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_last_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="customer_first_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="firstName"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_first_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="customer_room_number" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="roomNumber"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_room_number"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<group name="customer_receipt_id">
+		<groupExpression><![CDATA[$F{customer_receipt_id}]]></groupExpression>
+	</group>
+	<group name="customer_receipt_customer_num">
+		<groupExpression><![CDATA[$F{customer_receipt_customer_num}]]></groupExpression>
+	</group>
+	<group name="customer_receipt_total">
+		<groupExpression><![CDATA[$F{customer_receipt_total}]]></groupExpression>
+	</group>
+	<group name="customer_receipt_date">
+		<groupExpression><![CDATA[$F{customer_receipt_date}]]></groupExpression>
+	</group>
+	<group name="customer_id">
+		<groupExpression><![CDATA[$F{customer_id}]]></groupExpression>
+	</group>
+	<group name="customer_num">
+		<groupExpression><![CDATA[$F{customer_num}]]></groupExpression>
+	</group>
+	<group name="customer_room_type">
+		<groupExpression><![CDATA[$F{customer_room_type}]]></groupExpression>
+	</group>
+	<group name="customer_check_out">
+		<groupExpression><![CDATA[$F{customer_check_out}]]></groupExpression>
+	</group>
+	<group name="customer_check_in">
+		<groupExpression><![CDATA[$F{customer_check_in}]]></groupExpression>
+	</group>
+	<group name="customer_email">
+		<groupExpression><![CDATA[$F{customer_email}]]></groupExpression>
+	</group>
+	<group name="customer_phone_number">
+		<groupExpression><![CDATA[$F{customer_phone_number}]]></groupExpression>
+	</group>
+	<group name="customer_last_name">
+		<groupExpression><![CDATA[$F{customer_last_name}]]></groupExpression>
+	</group>
+	<group name="customer_first_name">
+		<groupExpression><![CDATA[$F{customer_first_name}]]></groupExpression>
+	</group>
+	<group name="customer_room_number">
+		<groupExpression><![CDATA[$F{customer_room_number}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="192" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="12" width="220" height="39" uuid="ecc3cc17-b3e5-419d-9632-713b42be2c9f">
+					<property name="com.jaspersoft.studio.unit.firstLineIndent" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="UTM Brewers KT" size="24" isBold="true" isItalic="false" isUnderline="false"/>
+					<paragraph lineSpacingSize="1.0"/>
+				</textElement>
+				<text><![CDATA[Royal Hotel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="51" width="192" height="29" uuid="ab8af173-192a-4759-855b-24113c868fca"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<text><![CDATA[No 7 Truong Sa, Street, Ngu Hanh Son, Đa Nang 550000, Vietnam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="55" y="81" width="110" height="16" uuid="ae952d65-25b2-4ab1-bf45-7ac543bb036d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hotline: 0932.435.059]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="98" width="177" height="22" uuid="08eba232-79c6-43e9-ba1d-be25a542f825"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="18" isBold="true"/>
+					<paragraph lineSpacingSize="1.0"/>
+				</textElement>
+				<text><![CDATA[Purchase Order]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="121" width="35" height="22" uuid="da5843a0-e366-4fc5-8064-ffabd7eb5f8d"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Room]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="171" width="39" height="21" uuid="203618d4-ac6a-4f54-aaef-76210824dd0e"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Cashier:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="39" y="171" width="61" height="21" uuid="01fde946-8b2e-4659-89c4-0ae8acdf3531"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Administrator]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="150" width="30" height="21" uuid="a1e2cdf0-eb75-4302-b57c-83147ade811f"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="150" width="41" height="21" uuid="c433fa5a-cea8-4a63-90a5-799983291227"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Number:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="171" width="37" height="21" uuid="23ddb454-3eda-4a34-887b-03a60082c85f"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Print at:]]></text>
+			</staticText>
+			<textField pattern="yyyy-MM-dd">
+				<reportElement x="30" y="150" width="90" height="21" uuid="ebc008e0-7bb0-45b5-aa9f-af0701c26d1f"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm:ss">
+				<reportElement x="180" y="171" width="40" height="21" uuid="d7d01a37-ae1c-4c6b-83fc-5b09353e82cc"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="116" y="121" width="65" height="22" uuid="b4063616-12e6-4bfd-84a5-646e062f1740"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_room_number}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="-3" y="11" width="41" height="15" uuid="8a84d24f-782e-4938-a608-d81b9b7105a7">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[From]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="11" width="41" height="15" uuid="ffaa9619-9236-4449-ac13-c832585d65c3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[To]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="11" width="30" height="15" uuid="5758966e-a69d-4d79-bf09-2bd25f53c51f"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Room]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="11" width="44" height="15" uuid="83c915ad-f778-4d31-9c8d-e95bfd3b3105"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="161" y="11" width="30" height="15" uuid="41f35bb1-1c9f-4265-91fb-9d1df624f6d7"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[T.Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="191" y="11" width="30" height="15" uuid="0d338a79-165e-4e87-b813-d11886360245"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-3" y="26" width="223" height="1" uuid="e18349ec-3613-4f34-bf00-c91f3181b35a"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="-3" y="3" width="223" height="1" uuid="301efea2-0274-4508-bd6a-93ab716fa558"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement x="184" y="-77" width="36" height="21" uuid="668a8d87-2f51-49df-888f-bc196b78ffcb"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_num}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy-MM-dd">
+				<reportElement x="-3" y="0" width="41" height="20" uuid="89ded3f5-80e7-40c1-a522-29cc872c33af"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_check_in}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy-MM-dd">
+				<reportElement x="46" y="0" width="41" height="20" uuid="3091220e-0252-4cb5-9fd1-a140757f92ca"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_check_out}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="87" y="0" width="30" height="20" uuid="10121f1a-a7e5-4476-b3ad-eb8f1f068eca"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_room_number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="117" y="0" width="44" height="20" uuid="398e882a-09e9-4065-ae61-6fd5aa6e3ca4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_room_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="161" y="0" width="30" height="20" uuid="da34d003-8eb2-48f8-a2ad-5cac38b3a804"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_receipt_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="0" width="30" height="20" uuid="a7397ed1-1678-4855-b319-b06b40386a07"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_receipt_total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-3" y="26" width="223" height="1" uuid="53f0e8ee-cb7f-4a36-97ab-73b3abef3b52"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="-3" y="34" width="223" height="1" uuid="520cf6f8-2acd-4934-ae89-9b6342e916e9"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="5" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="63" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="2cb912e4-15ea-4091-999e-94000a3b3840"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Service Charge:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="0" width="100" height="20" uuid="d13cfe7f-3ffc-495d-b07a-839fd429c49c"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[0]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="100" height="20" uuid="4960a1eb-412b-4a4e-8d6a-e3a0cfe5ab06"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hourly Room Rate:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="122" y="20" width="100" height="20" uuid="4fbb1dde-9efc-4d5d-8476-817f1460523a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="52eb0a06-8487-4a14-a637-4c8c62607fa3"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_receipt_total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-3" y="35" width="223" height="1" uuid="fbea3e2d-e743-425c-b353-d480394e23c0"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="40" width="100" height="20" uuid="cf1629fd-5c0f-4f4c-ae11-80bfd1fa8545"/>
+				<textElement>
+					<font fontName="Elephant" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="122" y="40" width="100" height="20" uuid="cbdd9089-29d9-495c-84a2-fe8da1b4f089">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6fead855-01a6-4432-a555-6149b722fe7b"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Elephant" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["$ "+$F{customer_receipt_total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="-3" y="12" width="225" height="30" uuid="584a0f82-c8cc-460e-830f-e7dddfe36561"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SVN-Nexa Rust Script" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Thank you for being a valued customer!]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
